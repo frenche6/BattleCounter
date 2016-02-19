@@ -1,0 +1,147 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MunchkinApp.VersusMonster"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"
+    xmlns:views="clr-namespace:MunchkinApp.View">
+    
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="#FFFF5959"/>
+            </RadialGradientBrush>
+        </Grid.Background>
+        <phone:Pivot x:Name="uVersusMonsterPivot" Title="Battle Screen" SelectionChanged="uVersusMonsterPivot_SelectionChanged">
+
+            <!--Pivot item one-->
+            <phone:PivotItem Header="Monster">
+                <Grid>
+                    <views:Monster/>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Versus">
+                <Grid>
+                    <!--<views:PlayerVsMonster/>-->
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65*"/>
+                        <ColumnDefinition Width="22*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Name="uPlayerNameText" Text="{Binding PlayerName, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34"/>
+                    <!--<TextBlock Grid.Row="1" Grid.Column="0" Name="uHelperNameText" Text="Helper" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="34" Visibility="Collapsed"/>-->
+                    <TextBlock Grid.Row="2" Grid.Column="0" Name="uMonsterNameText" Text="Monster" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="34"/>
+
+                    <TextBlock Grid.Row="0" Grid.Column="1" Name="uPlayerTotalText" Text="{Binding TotalPower, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="34"/>
+                    <!--<TextBlock Grid.Row="1" Grid.Column="1" Name="uHelperLevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="34" Visibility="Collapsed"/>-->
+                    <TextBlock Grid.Row="2" Grid.Column="1" Name="uMonsterTotalText" Text="{Binding TotalPower}" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="34"/>
+
+                    <phone:Pivot Grid.Row="0" Grid.RowSpan="3" Grid.ColumnSpan="2" x:Name="uHelperPivot" Visibility="Collapsed" VerticalAlignment="Top" SelectionChanged="uHelperPivot_SelectionChanged">
+                        <phone:PivotItem VerticalAlignment="Center" Height="266">
+                            <StackPanel>
+                                <TextBlock Name="uHelper2Name" Text="{Binding PlayerName}" FontSize="34"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Level " FontSize="34"/>
+                                    <TextBlock Name="uPlayer2Level" Text="{Binding PlayerLevel}" FontSize="34"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Total " FontSize="34"/>
+                                    <TextBlock Name="uPlayer2Total" Text="{Binding TotalPower}" FontSize="34"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </phone:PivotItem>
+                        <phone:PivotItem VerticalAlignment="Center" Height="266">
+                            <StackPanel>
+                                <TextBlock Name="uHelper3Name" Text="{Binding PlayerName}" FontSize="34"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Level " FontSize="34"/>
+                                    <TextBlock Name="uPlayer3Level" Text="{Binding PlayerLevel}" FontSize="34"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Total " FontSize="34"/>
+                                    <TextBlock Name="uPlayer3Total" Text="{Binding TotalPower}" FontSize="34"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </phone:PivotItem>
+                        <phone:PivotItem VerticalAlignment="Center" Height="266">
+                            <StackPanel>
+                                <TextBlock Name="uHelper4Name" Text="{Binding PlayerName}" FontSize="34"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Level " FontSize="34"/>
+                                    <TextBlock Name="uPlayer4Level" Text="{Binding PlayerLevel}" FontSize="34"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Total " FontSize="34"/>
+                                    <TextBlock Name="uPlayer4Total" Text="{Binding TotalPower}" FontSize="34"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </phone:PivotItem>
+                        <phone:PivotItem VerticalAlignment="Center" Height="266">
+                            <StackPanel>
+                                <TextBlock Name="uHelper5Name" Text="{Binding PlayerName}" FontSize="34"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Level " FontSize="34"/>
+                                    <TextBlock Name="uPlayer5Level" Text="{Binding PlayerLevel}" FontSize="34"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Total " FontSize="34"/>
+                                    <TextBlock Name="uPlayer5Total" Text="{Binding TotalPower}" FontSize="34"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </phone:PivotItem>
+                        <phone:PivotItem VerticalAlignment="Center" Height="266">
+                            <StackPanel>
+                                <TextBlock Name="uHelper6Name" Text="{Binding PlayerName}" FontSize="34"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Level " FontSize="34"/>
+                                    <TextBlock Name="uPlayer6Level" Text="{Binding PlayerLevel}" FontSize="34"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Total " FontSize="34"/>
+                                    <TextBlock Name="uPlayer6Total" Text="{Binding TotalPower}" FontSize="34"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </phone:PivotItem>
+
+                    </phone:Pivot>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0"  Text="Player Strength" FontSize="34" VerticalAlignment="Top"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1"  Name="uTotalCalculatedPower" Text="" FontSize="34" VerticalAlignment="Top"/>
+
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="AppBar1" IsVisible="True" Mode="Default" StateChanged="ResetMonster_Click">
+            <shell:ApplicationBarIconButton IconUri="Assets/Icons/User-Add.png" Text="Get Help" Click="GetHelp_Click"/>
+            <shell:ApplicationBarIconButton IconUri="Assets/Icons/Dice.png" Text="Roll Dice" Click="RollDice_Click"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="reset monster"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+    
+</phone:PhoneApplicationPage>
+    
+    
