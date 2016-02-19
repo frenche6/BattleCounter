@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="MunchkinApp.View.PlayerOutlinePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Level" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Total" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Name="uPlayer1Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom" Tap="uPlayer1Text_Tap"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Name="uPlayer2Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Name="uPlayer3Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Name="uPlayer4Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Name="uPlayer5Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Name="uPlayer6Text" Text="{Binding PlayerName, Mode=TwoWay}"  FontSize="34" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="uPlayer1LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Name="uPlayer2LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Name="uPlayer3LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="4" Grid.Column="1" Name="uPlayer4LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Name="uPlayer5LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="6" Grid.Column="1" Name="uPlayer6LevelText" Text="{Binding PlayerLevel, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" Name="uPlayer1TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" Name="uPlayer2TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Name="uPlayer3TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Name="uPlayer4TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="5" Grid.Column="2" Name="uPlayer5TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="6" Grid.Column="2" Name="uPlayer6TotalText" Text="{Binding TotalPower, Mode=TwoWay}" FontSize="34" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+    </Grid>
+</UserControl>

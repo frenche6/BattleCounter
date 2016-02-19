@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="MunchkinApp.View.Monster"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button x:Name="uLevelDown" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Width="120" Height="100" Margin="40,17,0,16" Click="uLevelDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Foreground>
+        </Button>
+        
+        <Button x:Name="uLevelUp" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Width="120" Height="100" Margin="0,17,40,16" Click="uLevelUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Foreground>
+        </Button>
+
+        <TextBlock FontSize="36" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="{Binding MonsterLevel}" VerticalAlignment="Center"/>
+        <TextBlock FontSize="36" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"  TextWrapping="Wrap" Text="{Binding TotalPower}"/>
+        <TextBlock FontSize="36" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="{Binding TemporaryBonus}" VerticalAlignment="Center"/>
+        
+        <Button x:Name="uTemporaryDown" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0" Width="120" Height="100" Margin="40,17,0,17" Click="uTemporaryDown_Click" Hold="uTemporaryDown_Hold">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Foreground>
+        </Button>
+        
+        <Button x:Name="uTemporaryUp" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Width="120" Height="100" Margin="0,17" Click="uTemporaryUp_Click" Hold="uTemporaryUp_Hold">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Background>
+            <Button.Foreground>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Foreground>
+        </Button>
+        <TextBlock FontSize="36" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" Text="Total"/>
+        <TextBlock FontSize="24" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Level" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="Temporary" VerticalAlignment="Center"/>
+
+
+    </Grid>
+</UserControl>

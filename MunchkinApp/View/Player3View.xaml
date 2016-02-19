@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="MunchkinApp.View.Player3View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="uLevelup" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="100" BorderThickness="0" Click="uLevelup_Click">
+            <Button.Foreground>
+                <ImageBrush Stretch="Uniform"/>
+            </Button.Foreground>
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="uLevelDown" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" BorderThickness="0" Height="100" Width="120" Click="uLevelDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock FontSize="36" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" Text="{Binding PlayerLevel, Mode=TwoWay}" VerticalAlignment="Center"/>
+        <TextBlock FontSize="36" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="5" TextWrapping="Wrap" Text="{Binding TempBonus, Mode=TwoWay}" VerticalAlignment="Center"/>
+
+        <Button x:Name="uTempDown" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Center" Height="100" Width="120" BorderThickness="0" Click="uTempDown_Click" Hold="uTempDown_Hold">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="uTempUp" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" BorderThickness="0" Height="100" Width="120" Click="uTempUp_Click" Hold="uTempUp_Hold">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="uArmorUp" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120" Height="100" BorderThickness="0" Click="uArmorUp_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Right-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="uArmorDown" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" Width="120" Height="100" BorderThickness="0" Click="uArmorDown_Click">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="/Assets/Icons/Arrowhead-Left-01.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock FontSize="36" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Text="{Binding EquipmentBonus, Mode=TwoWay}" VerticalAlignment="Center"/>
+        <TextBlock FontSize="36" HorizontalAlignment="Right" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="Total" VerticalAlignment="Bottom"/>
+        <TextBlock FontSize="36" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" Text="{Binding TotalPower, Mode=TwoWay}" VerticalAlignment="Bottom"/>
+        <TextBlock FontSize="24" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Level" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Armor" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Text="Temporary" VerticalAlignment="Center"/>
+
+    </Grid>
+</UserControl>
